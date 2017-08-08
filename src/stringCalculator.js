@@ -5,7 +5,9 @@ var stringCalculator = function() {};
 stringCalculator.prototype.add = function(string) {
   if (string === "") {
     return 0;
-  } else if (string.length > 1) {
+  } else if (string.length == 1) {
+    return parseInt(string);
+  } else
     var splitString = []
     var result = 0;
     splitString = string.split(",");
@@ -16,10 +18,6 @@ stringCalculator.prototype.add = function(string) {
       });
     }
     return result;
-  }
-  else {
-    return parseInt(string);
-  }
 };
 
 stringCalculator.prototype.convert = function(arrayOfStrings) {
