@@ -8,16 +8,15 @@ stringCalculator.prototype.add = function(string) {
   } else if (string.length == 1) {
     return parseInt(string);
   } else
-    var splitString = []
     var result = 0;
-    splitString = string.split(",");
+    var splitString = string.split(/[\n,]/);
     splitString = this.convert(splitString);
-    for (var i in splitString) {
-      splitString.reduce(function(sum, value) {
-        result =  sum + value;
-      });
-    }
-    return result;
+
+    var total = splitString.reduce(function(sum, value) {
+      return sum + value;
+    }, 0);
+
+    return total;
 };
 
 stringCalculator.prototype.convert = function(arrayOfStrings) {
