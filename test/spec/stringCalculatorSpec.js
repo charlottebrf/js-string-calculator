@@ -28,6 +28,11 @@ describe('StringCalculator', function() {
       expect(calculator.add("3\n1;2")).toEqual(6);
       expect(calculator.add("//;\n1;2")).toEqual(3);
     })
+
+    it("only returns the sum for positive numbers", function() {
+      // expect(calculator.add("//;\n-1;2")).toEqual(3);
+      expect( function(){ calculator.add("//;\n-1;2"); } ).toThrow('Negatives not allowed: -1');
+    })
   });
 
   describe('#convert', function() {
@@ -50,6 +55,7 @@ describe('StringCalculator', function() {
     });
     it("raises an exception for negative numbers", function() {
       expect( function(){ calculator.negativeNumberCheck([-1, 2]); } ).toThrow('Negatives not allowed: -1');
+      // expect( function(){ calculator.negativeNumberCheck([-1, -2]); } ).toThrow('Negatives not allowed: -1, -2');
     })
   });
 });

@@ -11,6 +11,7 @@ stringCalculator.prototype.add = function (string) {
   var splitString = string.split(/[\n,;]/);
   var convertedString = this.convert(splitString);
   var checkedIntegers = this.integerCheck(convertedString);
+  checkedIntegers = this.negativeNumberCheck(checkedIntegers);
   var total = checkedIntegers.reduce(function (sum, value) {
     return sum + value;
   }, 0);
