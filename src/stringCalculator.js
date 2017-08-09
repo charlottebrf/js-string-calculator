@@ -58,3 +58,14 @@ stringCalculator.prototype.negativeNumberCheck = function (checkedArrayOfInteger
 stringCalculator.prototype.throwError = function (negativeNumbers) {
   throw `Negatives not allowed: ${negativeNumbers}`;
 }
+
+stringCalculator.prototype.bigNumbers = function (allNumbers) {
+  for (var number of allNumbers) {
+    if (number >= 1000) {
+      var index = allNumbers.indexOf(number);
+      delete allNumbers[index];
+    };
+  }
+  console.log(allNumbers);
+  return allNumbers;
+}

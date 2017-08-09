@@ -30,7 +30,7 @@ describe('StringCalculator', function() {
     })
 
     it("only returns the sum for positive numbers", function() {
-      // expect(calculator.add("//;\n-1;2")).toEqual(3);
+      expect( function(){ calculator.add("//;\n-1;-2"); } ).toThrow('Negatives not allowed: -1,-2');
       expect( function(){ calculator.add("//;\n-1;2"); } ).toThrow('Negatives not allowed: -1');
     })
   });
@@ -62,6 +62,12 @@ describe('StringCalculator', function() {
   describe('#throwError', function() {
     it("throws an error for each negative number in the array", function() {
       expect( function(){ calculator.negativeNumberCheck([-1, -2]); } ).toThrow('Negatives not allowed: -1,-2');
+    })
+  });
+
+  describe('#bigNumbers', function() {
+    it("numbers bigger than 1000 are ignored", function() {
+      expect(calculator.bigNumbers([1000, 3, 2, 67])).toEqual([undefined,3,2,67]);
     })
   });
 });
