@@ -33,6 +33,10 @@ describe('StringCalculator', function() {
       expect( function(){ calculator.add("//;\n-1;-2"); } ).toThrow('Negatives not allowed: -1,-2');
       expect( function(){ calculator.add("//;\n-1;2"); } ).toThrow('Negatives not allowed: -1');
     })
+
+    it("returns the sum for numbers under 1000", function() {
+      expect(calculator.add("//;\n1;2;1000")).toEqual(3);
+    })
   });
 
   describe('#convert', function() {
@@ -66,7 +70,7 @@ describe('StringCalculator', function() {
   });
 
   describe('#bigNumbers', function() {
-    it("numbers bigger than 1000 are ignored", function() {
+    it("numbers bigger than 1000 are deleted from the array", function() {
       expect(calculator.bigNumbers([1000, 3, 2, 67])).toEqual([undefined,3,2,67]);
     })
   });

@@ -12,6 +12,7 @@ stringCalculator.prototype.add = function (string) {
   var convertedString = this.convert(splitString);
   var checkedIntegers = this.integerCheck(convertedString);
   checkedIntegers = this.negativeNumberCheck(checkedIntegers);
+  checkedIntegers = this.bigNumbers(checkedIntegers);
   var total = checkedIntegers.reduce(function (sum, value) {
     return sum + value;
   }, 0);
@@ -66,6 +67,5 @@ stringCalculator.prototype.bigNumbers = function (allNumbers) {
       delete allNumbers[index];
     };
   }
-  console.log(allNumbers);
   return allNumbers;
 }
