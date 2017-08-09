@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/string-calculator-2
+    working_directory: ~/js-string-calculator
     docker:
       - image: circleci/node:4.8.2
       - image: mongo:3.4.4
