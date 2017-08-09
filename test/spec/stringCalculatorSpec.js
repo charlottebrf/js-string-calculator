@@ -45,6 +45,10 @@ describe('StringCalculator', function() {
     it("allows multiple delimeters", function() {
       expect(calculator.add("//[*][%]\n1*2%3")).toEqual(6);
     })
+
+    it("allows multiple delimeters longer than one char", function() {
+      expect(calculator.add("//[*%$][%]\n1*2%3")).toEqual(6);
+    })
   });
 
   describe('#convert', function() {
