@@ -39,13 +39,21 @@ stringCalculator.prototype.integerCheck = function (arrayOfIntegers) {
 
 stringCalculator.prototype.negativeNumberCheck = function (checkedArrayOfIntegers) {
   var postiveIntegersOnly = [];
+  var negativeNumbers = [];
   for (var number of checkedArrayOfIntegers) {
     if (Math.sign(number) == 1) {
       postiveIntegersOnly.push(number);
     }
     else if (Math.sign(number) == -1) {
-      throw `Negatives not allowed: ${number}`;
+      negativeNumbers.push(number);
     }
   }
+  this.throwError(negativeNumbers);
   return postiveIntegersOnly;
+}
+
+stringCalculator.prototype.throwError = function (negativeNumbers) {
+  for (var negative of negativeNumbers) {
+    throw `Negatives not allowed: ${negative}`;
+  };
 }
