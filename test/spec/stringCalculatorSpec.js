@@ -39,8 +39,17 @@ describe('StringCalculator', function() {
 
   describe('#integerCheck', function() {
     it("deletes any elements that are not integers", function() {
-      var result = calculator.convert([";","\n","1", ";", "2"])
+      calculator.convert([";","\n","1", ";", "2"])
       expect(calculator.integerCheck([";","\n",1,";", 2])).toEqual([1, 2]);
     });
   })
+
+  describe('#negativeNumberCheck', function() {
+    it("removes negative numbers", function() {
+      expect(calculator.negativeNumberCheck([1, 2])).toEqual([1, 2]);
+    });
+    it("raises an exception for negative numbers", function() {
+      expect( function(){ calculator.negativeNumberCheck([-1, 2]); } ).toThrow(new Error("'Negatives not allowed'"));
+    })
+  });
 });

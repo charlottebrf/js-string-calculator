@@ -35,3 +35,16 @@ stringCalculator.prototype.integerCheck = function (arrayOfIntegers) {
   }
   return checkedArrayOfIntegers;
 };
+
+stringCalculator.prototype.negativeNumberCheck = function (checkedArrayOfIntegers) {
+  var postiveIntegersOnly = [];
+  for (var number of checkedArrayOfIntegers) {
+    if (Math.sign(number) == 1) {
+      postiveIntegersOnly.push(number);
+    }
+    else if (Math.sign(number) == -1) {
+      throw 'Negatives not allowed';
+    }
+  }
+  return postiveIntegersOnly;
+}
