@@ -41,6 +41,10 @@ describe('StringCalculator', function() {
     it("returns the sum for numbers using any delimeters", function() {
       expect(calculator.add("//[***]\n1***2***3")).toEqual(6);
     })
+
+    it("allows multiple delimeters", function() {
+      expect(calculator.add("//[*][%]\n1*2%3")).toEqual(6);
+    })
   });
 
   describe('#convert', function() {
