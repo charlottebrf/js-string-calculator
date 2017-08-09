@@ -48,12 +48,13 @@ stringCalculator.prototype.negativeNumberCheck = function (checkedArrayOfInteger
       negativeNumbers.push(number);
     }
   }
-  this.throwError(negativeNumbers);
+  if (typeof negativeNumbers[0] !== 'undefined' && negativeNumbers[0] !== null) {
+    this.throwError(negativeNumbers);
+  } else
   return postiveIntegersOnly;
 }
 
+
 stringCalculator.prototype.throwError = function (negativeNumbers) {
-  for (var negative of negativeNumbers) {
-    throw `Negatives not allowed: ${negative}`;
-  };
+  throw `Negatives not allowed: ${negativeNumbers}`;
 }

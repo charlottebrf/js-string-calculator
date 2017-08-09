@@ -55,7 +55,13 @@ describe('StringCalculator', function() {
     });
     it("raises an exception for negative numbers", function() {
       expect( function(){ calculator.negativeNumberCheck([-1, 2]); } ).toThrow('Negatives not allowed: -1');
-      expect( function(){ calculator.negativeNumberCheck([-1, -2]); } ).toThrow('Negatives not allowed: -1, -2');
+      expect( function(){ calculator.negativeNumberCheck([-1, -2]); } ).toThrow('Negatives not allowed: -1,-2');
+    })
+  });
+
+  describe('#throwError', function() {
+    it("throws an error for each negative number in the array", function() {
+      expect( function(){ calculator.negativeNumberCheck([-1, -2]); } ).toThrow('Negatives not allowed: -1,-2');
     })
   });
 });
