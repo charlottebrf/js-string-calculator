@@ -1,5 +1,6 @@
 # String Calculator
 [![CircleCI](https://circleci.com/gh/charlottebrf/js-string-calculator.svg?style=svg)](https://circleci.com/gh/charlottebrf/js-string-calculator)
+[![Coverage Status](https://coveralls.io/repos/github/charlottebrf/js-string-calculator/badge.svg?branch=master)](https://coveralls.io/github/charlottebrf/js-string-calculator?branch=master)
 
 ## The challenge
 
