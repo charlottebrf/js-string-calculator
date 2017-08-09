@@ -43,7 +43,7 @@ stringCalculator.prototype.negativeNumberCheck = function (checkedArrayOfInteger
       postiveIntegersOnly.push(number);
     }
     else if (Math.sign(number) == -1) {
-      throw 'Negatives not allowed';
+      throw `Negatives not allowed: ${number}`;
     }
   }
   return postiveIntegersOnly;

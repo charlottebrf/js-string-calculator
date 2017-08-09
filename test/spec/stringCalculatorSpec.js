@@ -49,7 +49,7 @@ describe('StringCalculator', function() {
       expect(calculator.negativeNumberCheck([1, 2])).toEqual([1, 2]);
     });
     it("raises an exception for negative numbers", function() {
-      expect( function(){ calculator.negativeNumberCheck([-1, 2]); } ).toThrow('Negatives not allowed');
+      expect( function(){ calculator.negativeNumberCheck([-1, 2]); } ).toThrow('Negatives not allowed: -1');
     })
   });
 });
