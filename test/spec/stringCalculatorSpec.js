@@ -22,8 +22,20 @@ describe('StringCalculator', function() {
     expect(calculator.add("1\n2,3")).toEqual(6);
   })
 
+  it("returns the sum of multiple numbers separated by any punctuation delineator", function() {
+    expect(calculator.add(";\n1;2")).toEqual(3);
+    expect(calculator.add("3\n1;2")).toEqual(6);
+    expect(calculator.add("//;\n1;2")).toEqual(3);
+  })
+
   it("turns an array of string numbers into integers", function() {
     expect(calculator.convert(["1","2"])).toEqual([1, 2]);
     expect(calculator.convert(["3","4"])).toEqual([3, 4]);
   });
+
+  it("deletes any elements that are not integers", function() {
+    var result = calculator.convert([";","\n","1", ";", "2"])
+    expect(calculator.integerCheck([";","\n",1,";", 2])).toEqual([1, 2]);
+  });
+
 });
