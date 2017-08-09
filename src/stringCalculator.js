@@ -8,7 +8,7 @@ stringCalculator.prototype.add = function (string) {
   } else if (string.length == 1) {
     return parseInt(string);
   } else
-  var splitString = string.split(/\D/);
+  var splitString = string.split(/[^a-zA-Z0-9-]+/);
   var convertedString = this.convert(splitString);
   var checkedIntegers = this.integerCheck(convertedString);
   checkedIntegers = this.negativeNumberCheck(checkedIntegers);
