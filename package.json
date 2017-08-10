@@ -2,16 +2,18 @@
   "name": "string-calculator-2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "stringCalculator.js",
   "directories": {
     "test": "test"
   },
   "dependencies": {
     "jasmine": "^2.7.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jasmine": "^2.7.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine"
   },
   "repository": {
     "type": "git",
